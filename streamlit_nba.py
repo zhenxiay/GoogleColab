@@ -22,7 +22,7 @@ st.divider()
 fig, ax = plt.subplots()
 ax.scatter(data['OBPM'], data['DBPM'])
 
-for i, label in enumerate(data['labels']):
+for i, label in enumerate(data['Player']):
     ax.annotate(label, (data['OBPM'][i], data['DBPM'][i]))
 
 st.pyplot(fig)

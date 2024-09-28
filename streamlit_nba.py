@@ -16,12 +16,10 @@ df_main = read_data('HOU',2024)[cols]
 df_main
 
 st.header("Scatter plot | x- PER | y- TS%")
-color = st.color_picker("Color", "#FF0000")
 st.divider()
 st.scatter_chart(
     df_main,
     x="PER",
     y="TS%",
-    color=color,
     size="BPM",
 )

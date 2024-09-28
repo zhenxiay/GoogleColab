@@ -20,9 +20,9 @@ st.header("Scatter plot | x- PER | y- TS%")
 st.divider()
 
 fig, ax = plt.subplots()
-ax.scatter(data['x'], data['y'])
+ax.scatter(data['OBPM'], data['DBPM'])
 
 for i, label in enumerate(data['labels']):
-    ax.annotate(label, (data['x'][i], data['y'][i]))
+    ax.annotate(label, (data['OBPM'][i], data['DBPM'][i]))
 
 st.pyplot(fig)

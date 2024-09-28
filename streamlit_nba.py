@@ -30,6 +30,6 @@ ax.scatter(x=data['OBPM'],
            alpha=0.5)
 
 for i, label in enumerate(data['Player']):
-    ax.annotate(label, (data['OBPM'][i] + 0.5, data['DBPM'][i] + 0.5))
+    ax.annotate(label, (data['OBPM'][i] + 0.15, data['DBPM'][i] + 0.15))
 
 st.pyplot(fig)

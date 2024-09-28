@@ -1,4 +1,6 @@
+import streamlit as st
 import pandas as pd
+import numpy as np
 
 def read_data(team,year):
     #year = dataset['Year-Wert']
@@ -12,3 +14,14 @@ cols = ['Player','Age','G','MP','PER','TS%','OBPM','DBPM','BPM','VORP']
 df_main = read_data('HOU',2024)[cols]
 
 df_main
+
+st.header("Scatter plot | x- PER | y- TS%")
+color = st.color_picker("Color", "#FF0000")
+st.divider()
+st.scatter_chart(
+    df_main,
+    x="PER",
+    y="TS%",
+    color=color,
+    size="BPM",
+)

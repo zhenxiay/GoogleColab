@@ -15,6 +15,8 @@ cols = ['Player','Age','G','MP','PER','TS%','OBPM','DBPM','BPM','VORP']
 
 data = read_data('HOU',2024)[cols]
 
+data = data[data['MP']> 400]
+
 #First part of the web app
 data
 
@@ -25,7 +27,7 @@ st.header("Scatter plot | x- OBPM | y- DBPM")
 #Second part of the web app
 fig, ax = plt.subplots()
 sizes = data['MP']*0.01
-max_size = 20
+max_size = 25
 
 ax.scatter(x=data['OBPM'], 
            y=data['DBPM'],

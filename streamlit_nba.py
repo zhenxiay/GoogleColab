@@ -24,8 +24,8 @@ st.header("Scatter plot | x- OBPM | y- DBPM")
 
 #Second part of the web app
 fig, ax = plt.subplots()
-sizes = data['MP']*0.001
-max_size = max(sizes)
+sizes = data['MP']*0.01
+max_size = 20
 
 ax.scatter(x=data['OBPM'], 
            y=data['DBPM'],

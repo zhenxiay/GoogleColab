@@ -18,16 +18,17 @@ data = read_data('HOU',2024)[cols]
 #First part of the web app
 data
 
-st.header("Scatter plot | x- PER | y- TS%")
 st.divider()
+
+st.header("Scatter plot | x- OBPM | y- DBPM")
 
 #Second part of the web app
 fig, ax = plt.subplots()
 ax.scatter(x=data['OBPM'], 
            y=data['DBPM'],
-           s=data['BPM'])
+           s=data['MP'])
 
 for i, label in enumerate(data['Player']):
-    ax.annotate(label, (data['OBPM'][i] + 0.05, data['DBPM'][i] + 0.05))
+    ax.annotate(label, (data['OBPM'][i] + 0.5, data['DBPM'][i] + 0.5))
 
 st.pyplot(fig)

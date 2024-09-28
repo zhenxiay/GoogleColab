@@ -24,9 +24,12 @@ st.header("Scatter plot | x- OBPM | y- DBPM")
 
 #Second part of the web app
 fig, ax = plt.subplots()
+sizes = data['MP']*0.001
+max_size = max(sizes)
+
 ax.scatter(x=data['OBPM'], 
            y=data['DBPM'],
-           #s=data['TS%'],
+           s=[size if size <= max_size else max_size for size in sizes],
            alpha=0.5)
 
 for i, label in enumerate(data['Player']):

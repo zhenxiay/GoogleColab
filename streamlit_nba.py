@@ -23,9 +23,11 @@ st.divider()
 
 #Second part of the web app
 fig, ax = plt.subplots()
-ax.scatter(data['OBPM'], data['DBPM'])
+ax.scatter(x=data['OBPM'], 
+           y=data['DBPM'],
+           s=data['BPM'])
 
 for i, label in enumerate(data['Player']):
-    ax.annotate(label, (data['OBPM'][i], data['DBPM'][i]))
+    ax.annotate(label, (data['OBPM'][i] + 0.05, data['DBPM'][i] + 0.05))
 
 st.pyplot(fig)

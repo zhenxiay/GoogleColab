@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 def read_data(team,year):
     #year = dataset['Year-Wert']
@@ -11,15 +12,17 @@ def read_data(team,year):
 
 cols = ['Player','Age','G','MP','PER','TS%','OBPM','DBPM','BPM','VORP']
 
-df_main = read_data('HOU',2024)[cols]
+data = read_data('HOU',2024)[cols]
 
-df_main
+data
 
 st.header("Scatter plot | x- PER | y- TS%")
 st.divider()
-st.scatter_chart(
-    df_main,
-    x="PER",
-    y="TS%",
-    size="BPM",
-)
+
+fig, ax = plt.subplots()
+ax.scatter(data['x'], data['y'])
+
+for i, label in enumerate(data['labels']):
+    ax.annotate(label, (data['x'][i], data['y'][i]))
+
+st.pyplot(fig)

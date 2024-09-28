@@ -26,7 +26,7 @@ st.header("Scatter plot | x- OBPM | y- DBPM")
 fig, ax = plt.subplots()
 ax.scatter(x=data['OBPM'], 
            y=data['DBPM'],
-           s=data['PER'])
+           s=data['TS%'])
 
 for i, label in enumerate(data['Player']):
     ax.annotate(label, (data['OBPM'][i] + 0.5, data['DBPM'][i] + 0.5))

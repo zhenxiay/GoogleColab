@@ -10,16 +10,46 @@ def read_data(name,start_date):
    df_asset = yf.download(name, start=start_date)
    return df_asset
 
-stock_name = 'MSFT'
-
-start_date = '2024-01-01'
-
-data = read_data(stock_name,start_date)
+#design the interface in the web app
+stock_selected = st.selectbox(
+   "Choose stock",
+        ('BRK-B',
+          'TWTR',
+          '^NDX',
+          'BNTX',
+          'SQ',
+          'AIR.PA',
+          'MSFT',
+          'GOOGL',
+          'FB',
+          'TSLA',
+          'DM.V',
+          '3CP.MU',
+          'FRA.DE',
+          'TTD',
+          'LYMS.DE',
+          'ZSRI.DE',
+          'EUNN.DE',
+          'DDD',
+          '1COV.DE',
+          'BAS.DE',
+          'HDD.DE',
+          'HPHA.DE',
+          'AG1.F',
+          'SAP.DE',
+           'PYPL'
+          ),
+     )
 
 #header
+stock_name = stock_selected
+start_date = '2024-01-01'
+
 st.header(f"Timeline | Stock- {stock_name} | Start- {start_date}")
 
 #First part of the web app
+data = read_data(stock_name,start_date)
+
 data
 
 st.divider()

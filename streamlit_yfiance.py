@@ -16,17 +16,21 @@ start_date = '2024-01-01'
 
 data = read_data(stock_name,start_date)
 
+#header
+st.header(f"Timeline | Stock- {stock_name} | Start- {start_date}")
+
 #First part of the web app
 data
 
 st.divider()
-
-st.header(f"Timeline | x- {stock_name} | y- {start_date}")
 
 #Second part of the web app
 fig = px.line(data, 
               x=data.index, 
               y='Adj Close', 
               title=f'{stock_name} Stock Price')
+
+fig.update_yaxes(range=[min(data['Adj Close'])*0.8, 
+                        max(data['Adj Close'])*1.2])
 
 st.plotly_chart(fig)

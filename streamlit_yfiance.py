@@ -1,5 +1,6 @@
 
 import streamlit as st
+import datetime
 import pandas as pd
 import yfinance as yf
 import numpy as np
@@ -17,35 +18,46 @@ def read_data(name,start_date):
    return df_asset
 
 #design the interface in the web app
-stock_selected = st.selectbox(
-   "Choose stock",
-        ('BRK-B',
-          'TWTR',
-          '^NDX',
-          'BNTX',
-          'SQ',
-          'AIR.PA',
-          'MSFT',
-          'GOOGL',
-          'FB',
-          'TSLA',
-          'DM.V',
-          '3CP.MU',
-          'FRA.DE',
-          'TTD',
-          'LYMS.DE',
-          'ZSRI.DE',
-          'EUNN.DE',
-          'DDD',
-          '1COV.DE',
-          'BAS.DE',
-          'HDD.DE',
-          'HPHA.DE',
-          'AG1.F',
-          'SAP.DE',
-           'PYPL'
-          ),
-     )
+
+col1, col2 = st.columns(2)
+
+with col1:
+
+    start_date = st.date_input("Select start date", 
+                           datetime.date(2024, 1, 1)
+                              )
+    
+with col2:
+
+    stock_selected = st.selectbox(
+            "Choose stock",
+            ('BRK-B',
+             'TWTR',
+             '^NDX',
+             'BNTX',
+             'SQ',
+             'AIR.PA',
+             'MSFT',
+             'GOOGL',
+             'FB',
+             'TSLA',
+             'DM.V',
+             '3CP.MU',
+             'FRA.DE',
+             'TTD',
+             'LYMS.DE',
+             'ZSRI.DE',
+             'EUNN.DE',
+             'DDD',
+             '1COV.DE',
+             'BAS.DE',
+             'HDD.DE',
+             'HPHA.DE',
+             'AG1.F',
+             'SAP.DE',
+             'PYPL'
+             ),
+                                )
 
 #header
 stock_name = stock_selected

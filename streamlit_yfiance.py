@@ -9,6 +9,11 @@ import plotly.express as px
 def read_data(name,start_date):
    df_asset = yf.download(name, start=start_date)
    df_asset['pct_change'] = df_asset['Adj Close'].pct_change(1)
+   
+   def to_percentage(x):
+         return f"{x*100:.2f}%"
+   df_asset['pct_change'] = df_asset['pct_change'].apply(to_percentage)
+   
    return df_asset
 
 #design the interface in the web app
@@ -65,5 +70,5 @@ st.divider()
 
 #Second part of the web app
 
-st.markdown("# Last 10 days' detail")
+st.markdown("## Last 10 days' detail")
 data[-10:]

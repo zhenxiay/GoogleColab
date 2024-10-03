@@ -5,6 +5,44 @@ import pandas as pd
 import yfinance as yf
 import numpy as np
 import plotly.express as px
+from abc import ABC, abstractmethod
+
+#Abstract class definition
+class StockDataStructure(ABC):
+    @abstractmethod
+    def read_data(self):
+        pass
+
+    @abstractmethod
+    def create_fig(self):
+        pass
+    
+#Define class for getting and displaying stock data
+class StockData(StockDataStructure):
+    
+    def __init__(self, name, start_date):
+        self.name = name
+        self.start_date = start_date
+    
+    def read_data(self):
+       df_asset = yf.download(self.name, start=self.start_date)
+       df_asset['pct_change'] = df_asset['Adj Close'].pct_change(1)
+       
+       def to_percentage(x):
+             return f"{x*100:.2f}%"
+       df_asset['pct_change'] = df_asset['pct_change'].apply(to_percentage)
+       
+       return df_asset
+   
+    def plot_data(self):
+        data = self.read_data(self.stock_name, self.start_date)
+
+        fig = px.line(data, 
+                      x=data.index, 
+                      y='Adj Close', 
+                      title=f'{stock_name} Stock Price')
+        return fig
+    
 
 #Definition of the function to get data
 def read_data(name,start_date):
@@ -67,6 +105,7 @@ start_date = date_selected
 st.header(f"Timeline | Stock- {stock_name} | Start- {start_date}")
 
 #First part of the web app
+
 data = read_data(stock_name,start_date)
 
 fig = px.line(data, 

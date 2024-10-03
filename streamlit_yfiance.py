@@ -50,11 +50,6 @@ st.header(f"Timeline | Stock- {stock_name} | Start- {start_date}")
 #First part of the web app
 data = read_data(stock_name,start_date)
 
-data
-
-st.divider()
-
-#Second part of the web app
 fig = px.line(data, 
               x=data.index, 
               y='Adj Close', 
@@ -64,3 +59,9 @@ fig.update_yaxes(range=[min(data['Adj Close'])*0.8,
                         max(data['Adj Close'])*1.2])
 
 st.plotly_chart(fig)
+
+st.divider()
+
+#Second part of the web app
+
+data[-10:]

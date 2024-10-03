@@ -23,7 +23,7 @@ col1, col2 = st.columns(2)
 
 with col1:
 
-    start_date = st.date_input("Select start date", 
+    date_selected = st.date_input("Select start date", 
                            datetime.date(2024, 1, 1)
                               )
     
@@ -31,7 +31,11 @@ with col2:
 
     stock_selected = st.selectbox(
             "Choose stock",
-            ('BRK-B',
+            (
+            'LYMS.DE',
+            'ZSRI.DE',
+            'EUNN.DE',
+            'BRK-B',
              'TWTR',
              '^NDX',
              'BNTX',
@@ -45,9 +49,6 @@ with col2:
              '3CP.MU',
              'FRA.DE',
              'TTD',
-             'LYMS.DE',
-             'ZSRI.DE',
-             'EUNN.DE',
              'DDD',
              '1COV.DE',
              'BAS.DE',
@@ -61,7 +62,7 @@ with col2:
 
 #header
 stock_name = stock_selected
-start_date = '2024-01-01'
+start_date = date_selected
 
 st.header(f"Timeline | Stock- {stock_name} | Start- {start_date}")
 

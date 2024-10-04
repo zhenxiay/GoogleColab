@@ -40,7 +40,7 @@ class StockData(StockDataStructure):
         fig = px.line(data, 
                       x=data.index, 
                       y='Adj Close', 
-                      title=f'{stock_name} Stock Price')
+                      title=f'{self.stock_name} Stock Price')
         return fig
 
 #design the interface in the web app

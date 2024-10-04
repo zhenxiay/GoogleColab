@@ -32,7 +32,9 @@ class StockData(StockDataStructure):
        
        def to_percentage(x):
              return f"{x*100:.2f}%"
-       df_asset['pct_change'] = df_asset['pct_change'].apply(to_percentage)
+       df_asset['pct_change_1_day'] = df_asset['pct_change_1_day'].apply(to_percentage)
+       df_asset['pct_change_7_day'] = df_asset['pct_change_7_day'].apply(to_percentage)
+       
        
        return df_asset
    

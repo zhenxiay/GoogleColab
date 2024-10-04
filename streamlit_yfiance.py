@@ -5,18 +5,18 @@ import pandas as pd
 import yfinance as yf
 import numpy as np
 import plotly.express as px
-from abstract_stock_data import StockData
+#from abstract_stock_data import StockData
 from abc import ABC, abstractmethod
 
 #Abstract class definition
-#class StockDataStructure(ABC):
-#    @abstractmethod
-#    def read_data(self):
-#        pass
+class StockDataStructure(ABC):
+    @abstractmethod
+    def read_data(self):
+        pass
 
-#    @abstractmethod
-#    def create_fig(self):
-#        pass
+    @abstractmethod
+    def create_fig(self):
+        pass
     
 #Define class for getting and displaying stock data
 class StockData(StockDataStructure):

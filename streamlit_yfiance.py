@@ -35,12 +35,12 @@ class StockData(StockDataStructure):
        return df_asset
    
     def create_fig(self):
-        data = self.read_data(self.stock_name, self.start_date)
+        data = self.read_data(self.name, self.start_date)
 
         fig = px.line(data, 
                       x=data.index, 
                       y='Adj Close', 
-                      title=f'{self.stock_name} Stock Price')
+                      title=f'{self.name} Stock Price')
         return fig
 
 #design the interface in the web app

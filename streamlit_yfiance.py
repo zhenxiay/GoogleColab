@@ -35,8 +35,6 @@ class StockData(StockDataStructure):
        
        for col in ('pct_delta_1_day', 'pct_delta_7_day'):
         df_asset[col] = df_asset[col].apply(to_percentage)
-       #df_asset['pct_delta_1_day'] = df_asset['pct_delta_1_day'].apply(to_percentage)
-       #df_asset['pct_delta_7_day'] = df_asset['pct_delta_7_day'].apply(to_percentage)
               
        return df_asset
    

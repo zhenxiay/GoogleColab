@@ -35,7 +35,7 @@ class StockData(StockDataStructure):
        return df_asset
    
     def create_fig(self):
-        data = self.read_data(self.name, self.start_date)
+        data = self.read_data()
 
         fig = px.line(data, 
                       x=data.index, 

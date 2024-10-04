@@ -42,17 +42,6 @@ class StockData(StockDataStructure):
                       y='Adj Close', 
                       title=f'{stock_name} Stock Price')
         return fig
-    
-#Definition of the function to get data
-#def read_data(name,start_date):
-#   df_asset = yf.download(name, start=start_date)
-#   df_asset['pct_change'] = df_asset['Adj Close'].pct_change(1)
-   
-#   def to_percentage(x):
-#         return f"{x*100:.2f}%"
-#   df_asset['pct_change'] = df_asset['pct_change'].apply(to_percentage)
-   
-#   return df_asset
 
 #design the interface in the web app
 
@@ -104,10 +93,7 @@ st.header(f"Timeline | Stock- {stock_selected} | Start- {date_selected}")
 stock_data = StockData(stock_selected, date_selected)
 data = stock_data.read_data()
 
-fig = px.line(data, 
-              x=data.index, 
-              y='Adj Close', 
-              title=f'{stock_selected} Stock Price')
+fig = stock_data.create_fig()
 
 fig.update_yaxes(range=[min(data['Adj Close'])*0.8, 
                         max(data['Adj Close'])*1.2])

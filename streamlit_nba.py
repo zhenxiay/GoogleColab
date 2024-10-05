@@ -42,7 +42,7 @@ def scatter_plotly(df,team,year):
         'y1': df['DBPM'].median()
         'line': {'color': 'blue', 'width': 1}}
         
-    fit.update_layout(shapes=[line])
+    fig.update_layout(shapes=[line])
 
 	for i in range(len(df)):
 		fig.add_annotation(x=df['OBPM'].iloc[i]+0.02, 

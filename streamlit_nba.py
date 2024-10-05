@@ -45,14 +45,14 @@ def scatter_matplotlib(df,team,year):
 	max_size = 200
 
 	ax.scatter(x=df['OBPM'], 
-           	   y=df['DBPM'],
+          	   y=df['DBPM'],
            	   s=[size if size <= max_size else max_size for size in sizes],
            	   alpha=0.5)
 
 #	for i, label in enumerate(data['Player']):
 #    	ax.annotate(label, (data['OBPM'][i] + 0.1, data['DBPM'][i] + 0.1))
-    
-    return fig, ax
+
+	return fig, ax
 
 #Selection area
 team_selected = st.selectbox('Team', get_team_list())

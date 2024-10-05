@@ -35,6 +35,15 @@ def scatter_plotly(df,team,year):
                  y="DBPM",
                  size="MP")
 
+    line = {'type': 'line',
+        'x0': 0,
+        'x1': df['OBPM'].median(),
+        'y0': 0,
+        'y1': df['DBPM'].median()
+        'line': {'color': 'blue', 'width': 1}}
+        
+    fit.update_layout(shapes=[line])
+
 	for i in range(len(df)):
 		fig.add_annotation(x=df['OBPM'].iloc[i]+0.02, 
         					y=df['DBPM'].iloc[i]+0.02, 
@@ -50,7 +59,7 @@ def scatter_matplotlib(df,team,year):
           	   y=df['DBPM'],
            	   s=[size if size <= max_size else max_size for size in sizes],
            	   alpha=0.5)
-
+    
 	for i, label in enumerate(data['Player']):
 		ax.annotate(label, 
 					(data['OBPM'][i] + 0.1, 

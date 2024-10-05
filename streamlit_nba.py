@@ -32,8 +32,7 @@ def scatter_plotly(df,team,year):
 	fig = px.scatter(df,
                  x="OBPM",
                  y="DBPM",
-                 color="Player",
-                 symbol="Tm")
+                 color="Player")
 
 	#for i in range(len(df)):
     #	fig.add_annotation(x=df['OBPM'].iloc[i]+0.1, y=df['DBPM'].iloc[i]+0.1, text=df['Player'].iloc[i])    
@@ -56,7 +55,7 @@ def scatter_matplotlib(df,team,year):
 
 #Selection area
 team_selected = st.selectbox('Team', get_team_list())
-plot_type = st.selectbox('Plot_method',('matplotlib','plotly'))
+plot_type = st.selectbox('Plot_method',('plotly','matplotlib'))
 year_selected = 2024
 
 #First part of the web app

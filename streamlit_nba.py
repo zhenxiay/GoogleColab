@@ -4,7 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #Definition of the function to get data
-@st.cache_data
 def get_team_list():
 
     df = pd.read_html('https://www.basketball-reference.com')

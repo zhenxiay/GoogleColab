@@ -58,7 +58,7 @@ def scatter_matplotlib(df,team,year):
 with st.sidebar:
 	team_selected = st.selectbox('Team', get_team_list())
 	plot_type = st.selectbox('Plot_method',('plotly','matplotlib'))
-	year_selected = st.text_input('Season':'2024')
+	year_selected = st.text_input('Season','2024')
 
 #First part of the web app
 st.markdown('## Advanced stats players')

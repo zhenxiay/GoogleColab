@@ -28,17 +28,18 @@ def read_data(team,year):
     df_a = data[3]
     return df_a
 
+#Selection area
+st.selectbox('Team': get_team_list)
+
+#First part of the web app
+st.markdown('## Advanced stats players')
+
 cols = ['Player','Age','G','MP','PER','TS%','OBPM','DBPM','BPM','VORP']
 
 data = read_data('HOU',2024)[cols]
 
 data = data[data['MP']> 400]
 
-#Selection area
-st.selectbox()
-
-#First part of the web app
-st.markdown('## Advanced stats players')
 data
 
 st.divider()

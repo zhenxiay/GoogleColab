@@ -29,7 +29,7 @@ def read_data(team,year):
     return df_a
 
 #Selection area
-team_selected = st.selectbox('Team': get_team_list)
+team_selected = st.selectbox('Team', get_team_list)
 
 #First part of the web app
 st.markdown('## Advanced stats players')

@@ -43,7 +43,7 @@ def scatter_plotly(df,team,year):
 	
 	line_y = {'type': 'line',
 			'x0': 0,
-			'x1': 0
+			'x1': 0,
 			'y0': df['DBPM'].min(),
 			'y1': df['DBPM'].max(),
 			'line': {'color': 'red', 'width': 2}}

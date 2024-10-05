@@ -38,7 +38,7 @@ def scatter_plotly(df,team,year):
 			'x0': 0,
 			'x1': df['OBPM'].median(),
 			'y0': 0,
-			'y1': df['DBPM'].median()
+			'y1': df['DBPM'].median(),
 			'line': {'color': 'blue', 'width': 1}}
        
 	fig.update_layout(shapes=[line])

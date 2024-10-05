@@ -35,10 +35,10 @@ def scatter_plotly(df,team,year):
                  size="MP")
 
 	line = {'type': 'line',
-			'x0': 0,
-			'x1': df['OBPM'].median(),
+			'x0': df['OBPM'].min(),
+			'x1': df['OBPM'].max(),
 			'y0': 0,
-			'y1': df['DBPM'].median(),
+			'y1':0,
 			'line': {'color': 'blue', 'width': 1}}
        
 	fig.update_layout(shapes=[line])

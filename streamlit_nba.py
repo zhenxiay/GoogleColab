@@ -34,14 +34,22 @@ def scatter_plotly(df,team,year):
                  y="DBPM",
                  size="MP")
 
-	line = {'type': 'line',
+	line_x = {'type': 'line',
 			'x0': df['OBPM'].min(),
 			'x1': df['OBPM'].max(),
 			'y0': 0,
-			'y1':0,
-			'line': {'color': 'blue', 'width': 1}}
-       
-	fig.update_layout(shapes=[line])
+			'y1': 0,
+			'line': {'color': 'red', 'width': 2}}
+	
+	line_y = {'type': 'line',
+			'x0': 0,
+			'x1': 0
+			'y0': df['DBPM'].min(),
+			'y1': df['DBPM'].max(),
+			'line': {'color': 'red', 'width': 2}}
+ 
+                  
+	fig.update_layout(shapes=[line_x, line_y])
 
 	for i in range(len(df)):
 		fig.add_annotation(x=df['OBPM'].iloc[i]+0.02, 

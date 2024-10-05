@@ -37,10 +37,10 @@ def scatter_plotly(df,team,year):
 
 	for i in range(len(df)):
     	fig.add_annotation(x=df['OBPM'].iloc[i]+0.1,
-                           y=df['DBPM'].iloc[i]+0.1,
+                          y=df['DBPM'].iloc[i]+0.1,
                            text=df['Player'].iloc[i])
 
-    return fig
+	return fig
 
 def scatter_matplotlib(df,team,year):        
 	fig, ax = plt.subplots()

@@ -1,0 +1,4 @@
+yfiance
+pandas
+plotly
+streamlit

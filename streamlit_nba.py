@@ -5,6 +5,22 @@ import matplotlib.pyplot as plt
 
 #Definition of the function to get data
 @st.cache_data
+def get_team_list():
+
+    df = pd.read_html('https://www.basketball-reference.com')
+    df_west = df[1]
+    df_west = df_west.rename(columns={"West": "teams"})
+    df_west['West'] = df_west['West'].str[:3]
+    teams = df_west['West']
+    #df_east = df[0]
+    #df_east = df_east.rename(columns={"East": "teams"})
+    #df_teams = pd.concat([df_west, df_east],ignore_index=True)
+    #df_teams['teams'] = df_teams['teams'].str[:3]
+    #teams = df_teams['teams']
+
+    return teams
+
+@st.cache_data
 def read_data(team,year):
     #year = dataset['Year-Wert']
     url = f'https://www.basketball-reference.com/teams/{team}/{year}.html'
@@ -17,6 +33,9 @@ cols = ['Player','Age','G','MP','PER','TS%','OBPM','DBPM','BPM','VORP']
 data = read_data('HOU',2024)[cols]
 
 data = data[data['MP']> 400]
+
+#Selection area
+st.selectbox()
 
 #First part of the web app
 st.markdown('## Advanced stats players')

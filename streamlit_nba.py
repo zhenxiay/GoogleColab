@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #Definition of the function to get data
+@st.cache_data
 def read_data(team,year):
     #year = dataset['Year-Wert']
     url = f'https://www.basketball-reference.com/teams/{team}/{year}.html'
@@ -18,6 +19,7 @@ data = read_data('HOU',2024)[cols]
 data = data[data['MP']> 400]
 
 #First part of the web app
+st.markdown('## Advanced stats players')
 data
 
 st.divider()

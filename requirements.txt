@@ -1,4 +1,3 @@
-yfiance
 pandas
 plotly
 streamlit

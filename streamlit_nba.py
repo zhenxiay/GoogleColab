@@ -10,12 +10,12 @@ def get_team_list():
     df_west = df[1]
     df_west = df_west.rename(columns={"West": "teams"})
     df_west['teams'] = df_west['teams'].str[:3]
-    teams = df_west['teams']
-    #df_east = df[0]
-    #df_east = df_east.rename(columns={"East": "teams"})
-    #df_teams = pd.concat([df_west, df_east],ignore_index=True)
-    #df_teams['teams'] = df_teams['teams'].str[:3]
-    #teams = df_teams['teams']
+    #teams = df_west['teams']
+    df_east = df[0]
+    df_east = df_east.rename(columns={"East": "teams"})
+    df_teams = pd.concat([df_west, df_east],ignore_index=True)
+    df_teams['teams'] = df_teams['teams'].str[:3]
+    teams = df_teams['teams']
 
     return teams.to_list()
 

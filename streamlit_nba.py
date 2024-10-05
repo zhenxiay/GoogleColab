@@ -21,7 +21,7 @@ def get_team_list():
     return teams
 
 @st.cache_data
-def read_data(_team,year):
+def read_data(team,year):
     #year = dataset['Year-Wert']
     url = f'https://www.basketball-reference.com/teams/{team}/{year}.html'
     data = pd.read_html(url)

@@ -23,7 +23,6 @@ def get_team_list():
     return teams.to_list()
 
 def read_data(team,year):
-    #year = dataset['Year-Wert']
     url = f'https://www.basketball-reference.com/teams/{team}/{year}.html'
     data = pd.read_html(url)
     df_a = data[3]
@@ -36,11 +35,11 @@ def scatter_plotly(df,team,year):
                  size="MP")
 
     line = {'type': 'line',
-        'x0': 0,
-        'x1': df['OBPM'].median(),
-        'y0': 0,
-        'y1': df['DBPM'].median()
-        'line': {'color': 'blue', 'width': 1}}
+			'x0': 0,
+			'x1': df['OBPM'].median(),
+			'y0': 0,
+			'y1': df['DBPM'].median()
+            'line': {'color': 'blue', 'width': 1}}
         
     fig.update_layout(shapes=[line])
 

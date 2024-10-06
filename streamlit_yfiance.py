@@ -7,6 +7,8 @@ import numpy as np
 import plotly.express as px
 #from abstract_stock_data import StockData
 from abc import ABC, abstractmethod
+import cufflinks as cf
+cf.go_offline()
 
 #Abstract class definition
 class StockDataStructure(ABC):
@@ -46,6 +48,13 @@ class StockData(StockDataStructure):
                       y='Adj Close', 
                       title=f'{self.name} Stock Price')
         return fig
+        
+    def create_cf_fig(self):
+        data = self.read_data
+        
+        qf = cf.QuantFig(data, title=f'Stock Dashboard - {self.name}',
+                        legend = 'right', name = f'{self.name}')
+		
 
 #design the interface in the web app
 
@@ -105,8 +114,16 @@ fig.update_yaxes(range=[min(data['Adj Close'])*0.8,
 st.plotly_chart(fig)
 
 st.divider()
-
 #Second part of the web app
+fig_qf = stock_data.create_cf_fig()
+
+fig_qf.iplot()
+
+st.plotly_chart(fig_qf)
+
+st.divider()
+
+#Third part of the web app
 
 st.markdown("## Last 10 days' detail")
 data[-10:]

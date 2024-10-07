@@ -41,9 +41,9 @@ class StockData(StockDataStructure):
 		return df_asset
   
 	def create_fig(self):
-        data = self.read_data()
+		data = self.read_data()
 
-        fig = px.line(data, 
+		fig = px.line(data, 
                       x=data.index, 
                       y='Adj Close', 
                       title=f'{self.name} Stock Price')

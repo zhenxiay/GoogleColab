@@ -5,4 +5,4 @@ matplotlib
 lxml
 yfinance
 cufflinks
-chart_studio
+chart-studio

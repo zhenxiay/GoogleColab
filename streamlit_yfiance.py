@@ -10,6 +10,7 @@ from abc import ABC, abstractmethod
 import cufflinks as cf
 from plotly.offline import iplot
 cf.go_offline()
+cf.set_config_file(offline=False, world_readable=True)
 
 #Abstract class definition
 class StockDataStructure(ABC):

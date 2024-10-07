@@ -8,6 +8,7 @@ import plotly.express as px
 #from abstract_stock_data import StockData
 from abc import ABC, abstractmethod
 import cufflinks as cf
+from plotly.offline import iplot
 cf.go_offline()
 
 #Abstract class definition

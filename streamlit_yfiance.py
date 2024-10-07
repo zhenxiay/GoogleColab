@@ -24,8 +24,8 @@ class StockDataStructure(ABC):
 class StockData(StockDataStructure):
     
 	def __init__(self, name, start_date):
-        self.name = name
-        self.start_date = start_date
+		self.name = name
+		self.start_date = start_date
     
 	def read_data(self):
 		df_asset = yf.download(self.name, start=self.start_date)

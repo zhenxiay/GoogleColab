@@ -23,7 +23,7 @@ class StockDataStructure(ABC):
 #Define class for getting and displaying stock data
 class StockData(StockDataStructure):
     
-    def __init__(self, name, start_date):
+	def __init__(self, name, start_date):
         self.name = name
         self.start_date = start_date
     

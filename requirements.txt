@@ -1,5 +1,5 @@
 pandas
-plotly==5.2.2
+plotly
 streamlit
 matplotlib
 lxml

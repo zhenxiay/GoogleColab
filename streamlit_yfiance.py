@@ -48,7 +48,7 @@ class StockData(StockDataStructure):
                       y='Adj Close', 
                       title=f'{self.name} Stock Price')
         return fig
-        
+       
 	def create_cf_fig(self):
 		data = self.read_data()
     

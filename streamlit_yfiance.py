@@ -55,7 +55,8 @@ class StockData(StockDataStructure):
 		qf = cf.QuantFig(data, 
         				title=f'Stock Dashboard - {self.name}', 
         				legend = 'right', 
-                        name = f'{self.name}')             
+                        name = f'{self.name}')
+        qf.iplot()             
 		return qf
         
 #design the interface in the web app
@@ -117,13 +118,13 @@ st.plotly_chart(fig)
 
 st.divider()
 #Second part of the web app
-#fig_qf = stock_data.create_cf_fig()
+fig_qf = stock_data.create_cf_fig()
 
 #fig_qf.iplot()
 
-#st.plotly_chart(fig_qf)
+st.plotly_chart(fig_qf)
 
-#st.divider()
+st.divider()
 
 #Third part of the web app
 

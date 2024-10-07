@@ -53,10 +53,8 @@ class StockData(StockDataStructure):
         data = self.read_data()
         
         qf = cf.QuantFig(data, title=f'Stock Dashboard - {self.name}',
-                        legend = 'right', name = f'{self.name}')
-                        
+                        legend = 'right', name = f'{self.name}')             
 		return qf
-		
 
 #design the interface in the web app
 

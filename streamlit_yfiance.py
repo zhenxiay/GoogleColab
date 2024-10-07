@@ -56,7 +56,7 @@ class StockData(StockDataStructure):
         				title=f'Stock Dashboard - {self.name}', 
         				legend = 'right', 
                         name = f'{self.name}')
-        qf.iplot()             
+		qf.iplot()             
 		return qf
         
 #design the interface in the web app

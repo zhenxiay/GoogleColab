@@ -52,10 +52,12 @@ class StockData(StockDataStructure):
     def create_cf_fig(self):
         data = self.read_data()
         
-        qf = cf.QuantFig(data, title=f'Stock Dashboard - {self.name}',
-                        legend = 'right', name = f'{self.name}')             
+        qf = cf.QuantFig(data, 
+        				title=f'Stock Dashboard - {self.name}', 
+        				legend = 'right', 
+                        name = f'{self.name}')             
 		return qf
-
+        
 #design the interface in the web app
 
 col1, col2 = st.columns(2)

@@ -50,7 +50,7 @@ class StockData(StockDataStructure):
         return fig
         
     def create_cf_fig(self):
-        data = self.read_data
+        data = self.read_data()
         
         qf = cf.QuantFig(data, title=f'Stock Dashboard - {self.name}',
                         legend = 'right', name = f'{self.name}')

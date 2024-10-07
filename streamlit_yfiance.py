@@ -120,13 +120,13 @@ st.plotly_chart(fig)
 
 st.divider()
 #Second part of the web app
-fig_qf = stock_data.create_cf_fig()
+#fig_qf = stock_data.create_cf_fig()
 
 #fig_qf.iplot()
 
-st.plotly_chart(fig_qf)
+#st.plotly_chart(fig_qf)
 
-st.divider()
+#st.divider()
 
 #Third part of the web app
 

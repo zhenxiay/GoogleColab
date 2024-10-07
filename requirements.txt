@@ -1,8 +1,8 @@
 pandas
-plotly
+plotly==5.2.2
 streamlit
 matplotlib
 lxml
 yfinance
-cufflinks
+cufflinks==0.17.3
 chart-studio

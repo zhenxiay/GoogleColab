@@ -31,14 +31,14 @@ class StockData(StockDataStructure):
 		df_asset = yf.download(self.name, start=self.start_date)
 		df_asset['pct_delta_1_day'] = df_asset['Adj Close'].pct_change(1)
 		df_asset['pct_delta_7_day'] = df_asset['Adj Close'].pct_change(7)
-       
-       def to_percentage(x):
+     
+		def to_percentage(x):
 			return f"{x*100:.2f}%"
-       
-    	for col in ('pct_delta_1_day', 'pct_delta_7_day'):
-        	df_asset[col] = df_asset[col].apply(to_percentage)
-              
-       return df_asset
+    
+		for col in ('pct_delta_1_day', 'pct_delta_7_day'):
+			df_asset[col] = df_asset[col].apply(to_percentage)
+           
+		return df_asset
   
 	def create_fig(self):
         data = self.read_data()

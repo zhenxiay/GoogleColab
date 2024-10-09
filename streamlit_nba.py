@@ -25,7 +25,7 @@ def get_team_list():
 def read_data(team,year):
     url = f'https://www.basketball-reference.com/teams/{team}/{year}.html'
     data = pd.read_html(url)
-    df_a = data[2]
+    df_a = data[1]
     return df_a
 
 def read_adv_data(team,year):

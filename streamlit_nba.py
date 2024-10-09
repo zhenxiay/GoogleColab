@@ -21,8 +21,14 @@ def get_team_list():
     teams = df_teams['teams']
 
     return teams.to_list()
-
+    
 def read_data(team,year):
+    url = f'https://www.basketball-reference.com/teams/{team}/{year}.html'
+    data = pd.read_html(url)
+    df_a = data[2]
+    return df_a
+
+def read_adv_data(team,year):
     url = f'https://www.basketball-reference.com/teams/{team}/{year}.html'
     data = pd.read_html(url)
     df_a = data[3]
@@ -82,11 +88,20 @@ with st.sidebar:
 	year_selected = st.text_input('Season','2024')
 
 #First part of the web app
+st.markdown('## Stats per game players')
+
+data_per_game = read_data(team_selected,year_selected)
+
+data_per_game
+
+st.divider()
+
+#Second part of the web app
 st.markdown('## Advanced stats players')
 
 cols = ['Player','Age','G','MP','PER','TS%','OBPM','DBPM','BPM','VORP']
 
-data = read_data(team_selected,year_selected)[cols]
+data = read_adv_data(team_selected,year_selected)[cols]
 
 data = data[data['MP']> 400]
 
@@ -96,7 +111,7 @@ st.divider()
 
 st.header("Scatter plot | x- OBPM | y- DBPM")
 
-#Second part of the web app
+#Third part of the web app
 if plot_type == 'matplotlib':
 	fig,ax = scatter_matplotlib(df=data,
                                 team=team_selected,

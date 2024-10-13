@@ -2,4 +2,6 @@ FROM ubuntu
 
 RUN apt update
 
-ENTRYPOINT [ "bash" ] 
+ENTRYPOINT [ "bash" ]
+
+CMD ["/bin/bash"]

@@ -4,4 +4,4 @@ RUN apt update
 
 ENTRYPOINT [ "bash" ]
 
-CMD ["/bin/bash"]
+Run bash

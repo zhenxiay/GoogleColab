@@ -104,7 +104,9 @@ cols = ['Player','Age','G','MP','PER','TS%','OBPM','DBPM','BPM','VORP']
 
 data = read_adv_data(team_selected,year_selected)[cols]
 
-data = data[data['MP']> 400]
+min_display = max(data['MP'])
+
+data = data[data['MP']> min_display*0.2]
 
 data
 

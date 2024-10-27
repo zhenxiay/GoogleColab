@@ -109,8 +109,8 @@ try:
 	min_display = max(data['MP'])
 
 	data = data[data['MP']> min_display*0.2]
-    
-    data
+   
+	data
     
 except:
     st.write('Adv data not availiable yet!')

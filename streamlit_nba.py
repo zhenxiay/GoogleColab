@@ -130,6 +130,6 @@ try:
 		fig = scatter_plotly(df=data,
 							team=team_selected,
 							year=year_selected)
-    	st.plotly_chart(fig)
+		st.plotly_chart(fig)
 except:
     st.write('Adv data not availiable yet!')

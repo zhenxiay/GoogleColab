@@ -102,13 +102,18 @@ st.markdown('## Advanced stats players')
 
 cols = ['Player','Age','G','MP','PER','TS%','OBPM','DBPM','BPM','VORP']
 
-data = read_adv_data(team_selected,year_selected)[cols]
+try:
 
-min_display = max(data['MP'])
+	data = read_adv_data(team_selected,year_selected)[cols]
 
-data = data[data['MP']> min_display*0.2]
+	min_display = max(data['MP'])
 
-data
+	data = data[data['MP']> min_display*0.2]
+    
+    data
+    
+except:
+    st.write('Adv data not availiable yet!')
 
 st.divider()
 

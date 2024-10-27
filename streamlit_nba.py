@@ -123,13 +123,13 @@ st.header("Scatter plot | x- OBPM | y- DBPM")
 try:
 	if plot_type == 'matplotlib':
 		fig,ax = scatter_matplotlib(df=data,
-  	                              team=team_selected,
-   	                             year=year_selected)
+									team=team_selected,
+									year=year_selected)
 		st.pyplot(fig)
 	elif plot_type == 'plotly':
- 	   fig = scatter_plotly(df=data,
-  	                              team=team_selected,
-   	                             year=year_selected)
+		fig = scatter_plotly(df=data,
+							team=team_selected,
+							year=year_selected)
     	st.plotly_chart(fig)
 except:
     st.write('Adv data not availiable yet!')

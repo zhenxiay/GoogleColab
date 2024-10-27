@@ -112,7 +112,7 @@ try:
    
 	data
     
-except IndexError:
+except:
     st.write('Adv data not availiable yet!')
 
 st.divider()
@@ -131,5 +131,5 @@ try:
 							team=team_selected,
 							year=year_selected)
 		st.plotly_chart(fig)
-except NameError:
+except:
     st.write('Adv data not availiable yet!')

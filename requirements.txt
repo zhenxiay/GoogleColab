@@ -6,3 +6,4 @@ lxml
 yfinance
 cufflinks==0.17.3
 chart-studio
+https://github.com/zhenxiay/BasketIntelligence.git
